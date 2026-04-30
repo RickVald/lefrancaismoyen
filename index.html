@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le Français Moyen — Tableau de bord réel de la France</title>
+  <meta name="description" content="Mettez des chiffres sur vos ressentis : inflation, énergie, dette, démographie, dépendance à l'État et richesse réelle de la France." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Le Français Moyen — Tableau de bord réel de la France" />
+  <meta property="og:description" content="Un tableau de bord interactif pour mesurer l'état réel du pays avec des données publiques et des indices lisibles." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://lefrancaismoyen.fr/" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+<header class="hero">
+  <nav class="nav"><a class="brand" href="#top">Le Français Moyen</a><div><a href="#60s">France en 60 secondes</a><a href="#indices">Indices</a><a href="#methodo">Méthodo</a><a href="weekly/latest.html">Hebdo</a></div></nav>
+  <section class="hero-inner" id="top">
+    <p class="eyebrow">Tableau de bord interactif</p>
+    <h1>Mettez des chiffres sur vos ressentis.</h1>
+    <p class="lead">Inflation réelle, dépendance énergétique, poids de l'État, richesse par habitant, soutenabilité démographique : une lecture simple et sourcée de l'état du pays.</p>
+    <div class="cta-row"><a class="button primary" href="#60s">Voir la France en 60 secondes</a><a class="button" href="#methodo">Voir les sources</a></div>
+  </section>
+</header>
+
+<main>
+<section class="section snapshot" id="60s">
+  <div class="section-head"><p class="eyebrow">Lecture rapide</p><h2>La France en 60 secondes</h2><p>Les chiffres ci-dessous sont des données de démonstration structurées pour être remplacées par les séries officielles.</p></div>
+  <div class="grid cards" id="snapshotCards"></div>
+</section>
+
+<section class="section" id="indices">
+  <div class="section-head"><p class="eyebrow">Indices signature</p><h2>5 thermomètres lisibles</h2><p>Chaque indice doit répondre à une question simple. C'est ce qui rend le site partageable.</p></div>
+  <div class="tool-grid">
+    <article class="tool-card"><h3>Inflation ressentie</h3><p>Compare l'inflation officielle à un panier pondéré nourriture / énergie / logement / transport.</p><div class="chart" data-chart="inflation"></div></article>
+    <article class="tool-card"><h3>Dépendance énergétique</h3><p>Part de l'énergie consommée qui dépend des importations, et coût estimé par habitant.</p><div class="chart" data-chart="energy"></div></article>
+    <article class="tool-card"><h3>Dépendance à l'État</h3><p>Estime la part de population dont le revenu dépend majoritairement de la dépense publique.</p><div class="chart" data-chart="state"></div></article>
+    <article class="tool-card"><h3>Richesse nette réelle</h3><p>Mesure la richesse nationale nette par habitant, corrigée de l'inflation officielle et ressentie.</p><div class="chart" data-chart="wealth"></div></article>
+    <article class="tool-card"><h3>Soutenabilité démographique</h3><p>Rapport entre actifs potentiels, retraités, mineurs et population dépendante.</p><div class="chart" data-chart="demo"></div></article>
+  </div>
+</section>
+
+<section class="section compare">
+  <div class="section-head"><p class="eyebrow">Ressenti vs réalité</p><h2>Ce que les Français ressentent, ce que les chiffres montrent</h2></div>
+  <div class="compare-grid" id="realityChecks"></div>
+</section>
+
+<section class="section" id="questions-seo">
+  <div class="section-head"><p class="eyebrow">Pages SEO à créer ensuite</p><h2>Répondre aux vraies questions</h2></div>
+  <div class="question-list">
+    <a href="#">La France s'appauvrit-elle vraiment ?</a>
+    <a href="#">Pourquoi les Français ont-ils l'impression que tout augmente ?</a>
+    <a href="#">Combien coûte vraiment l'État par habitant ?</a>
+    <a href="#">La France dépend-elle trop de l'énergie étrangère ?</a>
+    <a href="#">La démographie française est-elle encore soutenable ?</a>
+  </div>
+</section>
+
+<section class="section method" id="methodo">
+  <div class="section-head"><p class="eyebrow">Crédibilité</p><h2>Méthode et sources</h2><p>La confiance se gagne ici. Chaque module doit afficher : source primaire, formule, dernière mise à jour, limites.</p></div>
+  <div class="method-grid">
+    <div><h3>Sources prévues</h3><p>INSEE, Eurostat, Banque mondiale, OCDE, SDES, RTE, Cour des comptes, DREES, Banque de France.</p></div>
+    <div><h3>Automatisation</h3><p>Les séries sont stockées dans <code>/data/dashboard-series.json</code>. Le site peut ensuite être alimenté via GitHub Actions.</p></div>
+    <div><h3>Limite assumée</h3><p>Les indices propriétaires ne sont pas des statistiques officielles : ce sont des agrégats explicites, auditables, et discutables.</p></div>
+  </div>
+</section>
+</main>
+
+<footer><p>Le Français Moyen — tableau de bord réel de la France.</p><p><a href="weekly/latest.html">Dernière note hebdomadaire</a> · <a href="docs/deployment.md">Déploiement</a></p></footer>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
