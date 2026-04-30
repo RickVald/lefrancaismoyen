@@ -2,29 +2,29 @@
   "lastUpdated": "2026-04-30",
   "snapshot": [
   {
-    "label": "Inflation cumulée (officielle) depuis 2000",
-    "value": "+52%",
-    "note": "Indice des prix INSEE (base 2015)"
+    "label": "Inflation officielle cumulée depuis 2000",
+    "value": "~+52%",
+    "note": "IPC INSEE, ordre de grandeur 2000 → 2024"
   },
   {
     "label": "Dépendance énergétique",
-    "value": "49%",
-    "note": "Part des importations dans la consommation énergétique – SDES"
+    "value": "~39%",
+    "note": "Dépendance nette estimée à partir du bilan énergétique SDES 2024"
   },
   {
     "label": "Population dépendante de transferts publics",
     "value": "~47%",
-    "note": "Retraités + fonction publique + étudiants + chômeurs + allocataires (estimation DREES / INSEE)"
+    "note": "Estimation à consolider : retraités, fonction publique, étudiants, chômeurs, allocataires"
   },
   {
     "label": "Dette publique par habitant",
     "value": "~47 000€",
-    "note": "Dette Maastricht / population – Eurostat 2024"
+    "note": "Dette Maastricht / population, ordre de grandeur 2024"
   },
   {
     "label": "Prélèvements obligatoires",
-    "value": "45,4% du PIB",
-    "note": "OCDE 2023"
+    "value": "~45% du PIB",
+    "note": "Ordre de grandeur OCDE / INSEE"
   }
 ],
   "charts": {
