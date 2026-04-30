@@ -68,5 +68,15 @@
 
 <footer><p>Le Français Moyen — tableau de bord réel de la France.</p><p><a href="weekly/latest.html">Dernière note hebdomadaire</a> · <a href="docs/deployment.md">Déploiement</a></p></footer>
 <script src="assets/js/app.js"></script>
+<script>
+fetch('data/dashboard-series.json')
+  .then(response => response.json())
+  .then(data => {
+    const el = document.getElementById('last-updated');
+    if (el && data.lastUpdated) {
+      el.textContent = data.lastUpdated;
+    }
+  });
+</script>
 </body>
 </html>
