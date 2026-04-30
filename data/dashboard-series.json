@@ -1,27 +1,32 @@
 {
   "lastUpdated": "2026-04-30",
   "snapshot": [
-    {
-      "label": "Inflation ressentie cumulée",
-      "value": "+71%",
-      "note": "Panier propriétaire depuis 2000 — démo"
-    },
-    {
-      "label": "Dépendance énergétique",
-      "value": "48%",
-      "note": "Part importée de la consommation — démo"
-    },
-    {
-      "label": "Dépendants de l'État",
-      "value": "52%",
-      "note": "Population directement liée à la dépense publique — démo"
-    },
-    {
-      "label": "Richesse nette réelle / hab.",
-      "value": "-9%",
-      "note": "Correction inflation ressentie depuis 2008 — démo"
-    }
-  ],
+  {
+    "label": "Inflation cumulée (officielle) depuis 2000",
+    "value": "+52%",
+    "note": "Indice des prix INSEE (base 2015)"
+  },
+  {
+    "label": "Dépendance énergétique",
+    "value": "49%",
+    "note": "Part des importations dans la consommation énergétique – SDES"
+  },
+  {
+    "label": "Population dépendante de transferts publics",
+    "value": "~47%",
+    "note": "Retraités + fonction publique + étudiants + chômeurs + allocataires (estimation DREES / INSEE)"
+  },
+  {
+    "label": "Dette publique par habitant",
+    "value": "~47 000€",
+    "note": "Dette Maastricht / population – Eurostat 2024"
+  },
+  {
+    "label": "Prélèvements obligatoires",
+    "value": "45,4% du PIB",
+    "note": "OCDE 2023"
+  }
+],
   "charts": {
     "inflation": [
       [
