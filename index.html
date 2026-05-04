@@ -279,5 +279,71 @@ function initSocial(){let active={score:true,rev:true,ben:true,balance:true};fun
 
 initMain();initCrn();initTax();initLife();initEnergy();initWork();initAdmin();initState();initDemo();initDemoEco();initSocial();
 </script>
+<script>
+const GOOGLE_SHEET_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSI8BB9ulAIpp9DWQFYKlokkafKoZL3cwaR00QaNvUdpi1oAzR8uZorPFDn2dNBpxPx-KyspazbTvm0/pub?output=csv";
+
+function parseCSV(text) {
+  const rows = text.trim().split(/\r?\n/).map(row =>
+    row.split(",").map(cell => cell.trim())
+  );
+  const headers = rows.shift();
+  return rows.map(row =>
+    Object.fromEntries(headers.map((h, i) => [h, row[i] || ""]))
+  );
+}
+
+const KPI_MAP = {
+  purchasing: "kpiPurchasing",
+  pouvoir_achat: "kpiPurchasing",
+  food: "kpiFood",
+  inflation: "kpiFood",
+  housing: "kpiHousing",
+  logement: "kpiHousing",
+  debt: "kpiDebt",
+  dette: "kpiDebt",
+  dailyScore: "dailyScore",
+  tension: "dailyScore"
+};
+
+fetch(GOOGLE_SHEET_CSV)
+  .then(r => r.text())
+  .then(text => {
+    const rows = parseCSV(text);
+
+    rows.forEach(row => {
+      const targetId = KPI_MAP[row.id];
+      if (!targetId) return;
+
+      const valueEl = document.getElementById(targetId);
+      if (!valueEl) return;
+
+      valueEl.textContent = row.value;
+
+      const card = valueEl.closest(".panel, .score");
+      if (card) {
+        const title = card.querySelector("h3, .muted");
+        const delta = card.querySelector(".delta, small");
+
+        if (title && row.label) title.textContent = row.label;
+        if (delta && row.delta) delta.textContent = row.delta;
+
+        if (row.status) {
+          delta?.classList.remove("up", "down", "neutral", "warn");
+          delta?.classList.add(row.status);
+        }
+
+        if (row.source) {
+          card.title = "Source : " + row.source;
+        }
+      }
+    });
+
+    const updated = document.createElement("div");
+    updated.style.cssText = "max-width:1500px;margin:0 auto 18px;padding:0 24px;color:#aebbd4;font-size:.9rem;";
+    updated.textContent = "Données connectées à Google Sheets — dernière synchronisation : " + new Date().toLocaleString("fr-FR");
+    document.querySelector("main")?.prepend(updated);
+  })
+  .catch(err => console.warn("Google Sheets non chargé", err));
+</script>
 </body>
 </html>
