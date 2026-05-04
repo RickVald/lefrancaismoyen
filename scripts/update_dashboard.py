@@ -4,16 +4,16 @@ from pathlib import Path
 
 DATA_FILE = Path("data/dashboard-series.json")
 
-OFFICIAL_SNAPSHOT = [
+SNAPSHOT = [
     {
         "label": "Inflation officielle cumulée depuis 2000",
         "value": "~+52%",
-        "note": "IPC INSEE, ordre de grandeur 2000 → 2024"
+        "note": "IPC INSEE série 001759970, ordre de grandeur 2000 → 2024"
     },
     {
         "label": "Dépendance énergétique",
         "value": "~39%",
-        "note": "Dépendance nette estimée à partir du bilan énergétique SDES 2024"
+        "note": "SDES 2024 : indépendance énergétique 60,7 %, donc dépendance ≈ 39,3 %"
     },
     {
         "label": "Population dépendante de transferts publics",
@@ -37,12 +37,12 @@ def main():
         data = json.load(f)
 
     data["lastUpdated"] = date.today().isoformat()
-    data["snapshot"] = OFFICIAL_SNAPSHOT
+    data["snapshot"] = SNAPSHOT
 
     with DATA_FILE.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print("Dashboard updated successfully.")
+    print("Dashboard updated with official-source snapshot.")
 
 if __name__ == "__main__":
     main()
